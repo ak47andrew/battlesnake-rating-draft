@@ -1,3 +1,4 @@
+use chrono::Utc;
 use skillratings::glicko2::{glicko2, Glicko2Config};
 use skillratings::Outcomes;
 use crate::battlesnake::Battlesnake;
@@ -29,6 +30,7 @@ pub fn update_rating(mut snakes: Vec<Battlesnake>) -> Vec<Battlesnake> {
 
     for i in 0..snakes.len() {
         snakes[i].rating = new_ratings[i].clone();
+        snakes[i].last_played = Utc::now();
     }
 
     snakes
