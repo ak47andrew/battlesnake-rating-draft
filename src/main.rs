@@ -1,7 +1,5 @@
 use std::fs::File;
-use chrono::{DateTime, Local, Utc};
 use csv::Writer;
-use rand::random;
 use crate::battlesnake::Battlesnake;
 use crate::game::simulate_game;
 use crate::glecko::update_rating;
